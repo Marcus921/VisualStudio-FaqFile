@@ -28,8 +28,7 @@ namespace FaqMessagesApi.Controllers
             _faqMessageService = faqMessageService;
         }
 
-        // GET: api/FaqMessagesApiControllers
-        // currently returning a listof strings
+        // GET: api/FaqMessages/allmessages
         [EnableCors]
         [HttpGet("allmessages")]
         public async Task<IEnumerable<FaqMessage>> Get()
@@ -40,7 +39,7 @@ namespace FaqMessagesApi.Controllers
             return faqmessages;
         }
 
-        // POST: api/FaqMessagesApiControllers
+        // POST: api/FaqMessages/messages
         [HttpPost("messages")]
         public async Task Post([FromBody] FaqMessage message)
         {
